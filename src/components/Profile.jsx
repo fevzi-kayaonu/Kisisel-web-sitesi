@@ -1,24 +1,4 @@
-const profileData = {
-  birthday: {
-    en: { name: "Birth Date", value: "24.03.1996" },
-    tr: { name: "Doğum Tarihi", value: "24.03.1996" },
-  },
-  city: {
-    en: { name: "City", value: "Ankara" },
-    tr: { name: "İkamet Şehri", value: "Ankara" },
-  },
-  education: {
-    en: { name: "Education", value: "Hacettepe Ünv. Biyoloji Lisans, 2016" },
-    tr: {
-      name: "Eğitim Durumu",
-      value: "Hacettepe Ünv. Biyoloji Lisans, 2016",
-    },
-  },
-  preferred: {
-    en: { name: "Preferred Role", value: "Frontend,UI" },
-    tr: { name: "Tercih Ettiği Rol", value: "Frontend,UI" },
-  },
-};
+import { profileData } from "../data";
 
 const Profile = () => {
   return (
