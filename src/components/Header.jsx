@@ -19,10 +19,10 @@ const Header = () => {
           <div className="flex  space-between alg-center gap-3 ">
             <div style={{ flexBasis: "65%" }} className=" flex column gap-3  ">
               <p className="fs-700 fw-400">Hi! 👋</p>
-              <p className="fs-800 fw-500 lh-4">
+              <h1 className="fs-800 fw-500 lh-4">
                 I’m Almila. I’m a full-stack developer. I can craft solid and
                 scalable frontend products. Let’s meet!
-              </p>
+              </h1>
               <div className="flex gap-2 padding-top-1">
                 <FontAwesomeIcon className="fa-3x" icon={faLinkedin} />
                 <FontAwesomeIcon className="fa-3x" icon={faGithub} />
