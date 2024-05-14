@@ -1,29 +1,41 @@
+const profileData = {
+  birthday: {
+    en: { name: "Birth Date", value: "24.03.1996" },
+    tr: { name: "Doğum Tarihi", value: "24.03.1996" },
+  },
+  city: {
+    en: { name: "City", value: "Ankara" },
+    tr: { name: "İkamet Şehri", value: "Ankara" },
+  },
+  education: {
+    en: { name: "Education", value: "Hacettepe Ünv. Biyoloji Lisans, 2016" },
+    tr: {
+      name: "Eğitim Durumu",
+      value: "Hacettepe Ünv. Biyoloji Lisans, 2016",
+    },
+  },
+  preferred: {
+    en: { name: "Preferred Role", value: "Frontend,UI" },
+    tr: { name: "Tercih Ettiği Rol", value: "Frontend,UI" },
+  },
+};
+
 const Profile = () => {
   return (
-    <section className="bg-gray flex js-center">
-      <div className="bg-gray flex column js-center alg-center">
-        <h1>Profile</h1>
-        <div className="flex alg-center">
-          <article className="flex column bg-white">
-            <h3>Basic Information</h3>{" "}
-            <div>
-              <p>Doğum tarihi </p>
-              <p>24.03.1996</p>
-            </div>
-            <div>
-              <p>İkamet şehri</p>
-              <p>Ankara</p>
-            </div>
-            <div>
-              <p>Eğitim durumu</p>
-              <p>Hacettepe Ünv. Biyoloji Lisans, 2016</p>
-            </div>
-            <div>
-              <p>Tercih Ettiği Rol</p>
-              <p>Frontend, UI</p>
-            </div>
+    <section className="bg-gray flex js-center outline padding-top-3 padding-bottom-3">
+      <div className="bg-gray flex column js-center alg-center gap-2 flex-basis-80 outline">
+        <h1 className="fs-800 fw-500 lh-3">Profile</h1>
+        <div className="flex js-center alg-center gap-3 outline">
+          <article className="bg-white  flex column  gap-1 outline flex-basis-40 padding-top-2 padding-bottom-2 ">
+            <h3 className="fs-600 tx-red">Basic Information</h3>{" "}
+            {Object.entries(profileData).map(([key, value]) => (
+              <div className="flex" key={key}>
+                <p className="flex-basis-40">{value.en.name}</p>
+                <p className="flex-basis-40">{value.en.value}</p>
+              </div>
+            ))}
           </article>
-          <article className="flex column">
+          <article className="flex column flex-basis-40">
             <h3>About me</h3>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam

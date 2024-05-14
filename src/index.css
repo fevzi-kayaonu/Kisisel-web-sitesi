@@ -33,12 +33,6 @@ ol[role="list"] {
   list-style: none;
 }
 
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  line-height: 1.5;
-}
-
 /* Set shorter line heights on headings and interactive elements */
 h1,
 h2,
@@ -217,8 +211,14 @@ video {
   /*--------------------------------*/
 }
 
-html,
+html {
+  font-size: 16px;
+}
+
+/* Set core body defaults */
 body {
+  min-height: 100vh;
+  line-height: 1.5;
   font-size: 16px;
 }
 
@@ -231,9 +231,39 @@ body {
 .column {
   flex-direction: column;
 }
+.flex-basis-30 {
+  flex-basis: 30%;
+}
+.flex-basis-40 {
+  flex-basis: 40%;
+}
 
-.space-between {
+.flex-basis-50 {
+  flex-basis: 50%;
+}
+
+.flex-basis-60 {
+  flex-basis: 60%;
+}
+
+.flex-basis-70 {
+  flex-basis: 70%;
+}
+
+.flex-basis-80 {
+  flex-basis: 80%;
+}
+
+.flex-basis-90 {
+  flex-basis: 90%;
+}
+
+.js-between {
   justify-content: space-between;
+}
+
+.js-around {
+  justify-content: space-around;
 }
 
 .wrap {
