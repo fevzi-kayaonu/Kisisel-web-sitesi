@@ -206,6 +206,7 @@ video {
   --clr-black: #0a0a14;
   --clr-white: #fff;
   --clr-gray: #f4f4f4;
+  --clr-lightgray: #777777;
   --clr-blue: #ddeefe;
   --clr-green: #d9f6f1;
   --clr-grayblue: #2a262b;
@@ -214,6 +215,11 @@ video {
   --clr-darkblue: #2d3235;
   --clr-darkbluegreen: #495351;
   /*--------------------------------*/
+}
+
+html,
+body {
+  font-size: 16px;
 }
 
 /*------------Utility Classes-------------- */
@@ -410,6 +416,10 @@ video {
   color: var(--clr-red);
 }
 
+.tx-gray {
+  color: var(--clr-lightgray);
+}
+
 .uppercase {
   text-transform: uppercase;
 }
@@ -427,7 +437,7 @@ video {
   background-position: center;
   background-size: cover;
   aspect-ratio: 1/1;
-  min-width: 300px;
+  min-width: 18.75rem;
   border-radius: 2rem;
   box-shadow: -1rem -1rem #e92577;
 }

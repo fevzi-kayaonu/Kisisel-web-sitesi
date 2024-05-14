@@ -5,19 +5,19 @@ const Header = () => {
   return (
     <>
       <header className="bg-gray flex js-center padding-top-3 padding-bottom-3">
-        <div className="flex column alg-center gap-3 padding-left-4 padding-right-4 padding-bottom-3 outline">
+        <div className="flex column alg-center gap-3 padding-left-4 padding-right-4 padding-bottom-3 ">
           <div className="flex mode alg-center gap-1 padding-top-3 padding-bottom-3 uppercase ">
             <div className="radio-btn">
               <div className="radio-inner active"></div>
             </div>
-            <div>light-mode | language </div>
+            <div className="fw-700 lh-1 tx-gray">
+              Dark mode | <span className="tx-red fw-700 lh-1">Türkçe</span>`ye
+              geç{" "}
+            </div>
           </div>
 
-          <div className="flex wrap-reverse space-between alg-center ">
-            <div
-              style={{ flexBasis: "52%" }}
-              className=" flex column gap-3 outline "
-            >
+          <div className="flex  space-between alg-center gap-3 ">
+            <div style={{ flexBasis: "65%" }} className=" flex column gap-3  ">
               <p className="fs-700 fw-400">Hi! 👋</p>
               <p className="fs-800 fw-500 lh-4">
                 I’m Almila. I’m a full-stack developer. I can craft solid and
@@ -44,7 +44,7 @@ const Header = () => {
             </div>
             <div
               className="padding-top-1 padding-bottom-1 "
-              style={{ flexBasis: "40%" }}
+              style={{ flexBasis: "35%" }}
             >
               <div className="profileimg"></div>
             </div>
