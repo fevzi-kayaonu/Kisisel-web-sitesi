@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <>
       <header className="bg-gray flex js-center padding-top-3 padding-bottom-3">
-        <div className="flex column alg-center gap-3 padding-left-3 padding-right-3 padding-bottom-3">
+        <div className="flex column alg-center gap-3 padding-left-4 padding-right-4 padding-bottom-3 outline">
           <div className="flex mode alg-center gap-1 padding-top-3 padding-bottom-3 uppercase ">
             <div className="radio-btn">
               <div className="radio-inner active"></div>

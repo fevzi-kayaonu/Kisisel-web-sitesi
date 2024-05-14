@@ -293,6 +293,10 @@ video {
   padding-right: 6rem;
 }
 
+.padding-right-4 {
+  padding-right: 9rem;
+}
+
 .padding-left-1 {
   padding-left: 3rem;
 }
@@ -301,6 +305,9 @@ video {
 }
 .padding-left-3 {
   padding-left: 6rem;
+}
+.padding-left-4 {
+  padding-left: 9rem;
 }
 
 /*-------background-color---------*/
