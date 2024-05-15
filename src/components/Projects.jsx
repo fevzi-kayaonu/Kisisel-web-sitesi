@@ -3,11 +3,11 @@ import { projectsData } from "../data";
 const Projects = () => {
   return (
     <section className="flex js-center bg-white  padding-top-3 padding-bottom-3">
-      <div className="flex column flex-basis-80 alg-center  padding-bottom-3 gap-2">
+      <div className="flex column flex-container alg-center  padding-bottom-3 gap-2 outline">
         <h2 className="fs-800 fw-500 lh-3">Projects</h2>
-        <div className="flex js-center gap-4 ">
+        <div className="flex js-center gap-4 wrap">
           {projectsData.en.map((item, index) => (
-            <div className="flex column  flex-basis-40 " key={item.title}>
+            <div className="flex column flex-profile " key={item.title}>
               <article
                 className={`flex column gap-2 padding-top-2 padding-bottom-2 padding-left-1 padding-right-1 flex-basis-100 ${
                   index % 2 == 0 ? "bg-blue" : "bg-green"

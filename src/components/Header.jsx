@@ -14,29 +14,37 @@ const Header = () => {
   };
   return (
     <>
-      <header className="bg-gray flex js-center padding-top-3 padding-bottom-3 position-relative">
+      <header
+        className="bg-gray flex js-center padding-top-3 padding-bottom-3 position-relative outline"
+        value={`${darkMode ? "dark" : ""}`}
+      >
         <div className="polo-gray position-absolute"></div>
         <div className="circle position-absolute"></div>
         <div className="diglet-pink position-absolute"></div>
-
-        <div className="flex column alg-center gap-3 flex-basis-80 padding-bottom-3 ">
-          <div className="flex mode alg-center gap-1 padding-top-3 padding-bottom-3 uppercase ">
-            <button className="radio-btn" name="mode" onClick={toogle}>
+        <div className="flex column alg-center gap-3 flex-container padding-bottom-3 outline ">
+          <div className="flex mode alg-center js-center  gap-1 padding-top-3 padding-bottom-3 uppercase padding-right-1">
+            <button
+              id="mode"
+              className="radio-btn"
+              name="mode"
+              onClick={toogle}
+            >
               <div className={`radio-inner ${darkMode ? "active" : ""}`}></div>
             </button>
-            <div className="fw-700 lh-1 tx-gray uppercase">
-              {headerData[lang].selections.mode[darkMode ? 1 : 0]} |{" "}
-              <button
-                className="tx-red fw-700 lh-1 uppercase"
-                name="language"
-                onClick={toogle}
-              >
-                {headerData[lang].selections.language}
-              </button>
-            </div>
+            <label htmlFor="mode" className="fw-700 lh-1 tx-gray uppercase">
+              {headerData[lang].selections.mode[darkMode ? 1 : 0]}{" "}
+            </label>
+            <span>|</span>
+            <button
+              className="tx-red bg-gray fw-700 lh-1 uppercase"
+              name="language"
+              onClick={toogle}
+            >
+              {headerData[lang].selections.language}
+            </button>
           </div>
 
-          <div className="flex  space-between alg-center gap-3 ">
+          <div className="flex  space-between alg-center js-center gap-3 wrap-reverse">
             <div
               style={{ flexBasis: "65%" }}
               className=" flex column gap-3 position-relative "

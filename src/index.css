@@ -190,9 +190,6 @@ button {
   /*-------------fontfamily----------------------*/
   --ff-inter: "Inter", sans-serif;
   --ff-play: "Playfair Display", serif;
-  --ff-serif: "Bellefair", serif;
-  --ff-sans-cond: "Barlow Condensed", sans-serif;
-  --ff-sans-normal: "Barlow", sans-serif;
   /*----------------------------------------------*/
   --fw-400: 400;
   --fw-500: 500;
@@ -212,7 +209,35 @@ button {
   --clr-middlegray: #525252;
   --clr-darkblue: #2d3235;
   --clr-darkbluegreen: #495351;
+  --color-card: #fff;
+  --color-card-shadow: #777777;
   /*--------------------------------*/
+
+  &:has(header[value="dark"]) {
+    --clr-gray: var(--clr-grayblue);
+    --clr-black: #fff;
+    --clr-white: var(--clr-darkgray);
+    --clr-blue: var(--clr-darkblue);
+    --clr-green: var(--clr-darkbluegreen);
+    --color-card: #525252;
+    --color-card-shadow: rgba(82, 82, 82, 0.5);
+    --clr-lightgray: #fff;
+
+    body {
+      color: white;
+    }
+  }
+}
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 html {
@@ -235,10 +260,15 @@ body {
 .column {
   flex-direction: column;
 }
+
+.flex-container {
+  flex-basis: 80%;
+}
+
 .flex-basis-30 {
   flex-basis: 30%;
 }
-.flex-basis-40 {
+.flex-profile {
   flex-basis: 40%;
 }
 
@@ -275,10 +305,10 @@ body {
 }
 
 .wrap {
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 .wrap-reverse {
-  flex-wrap: wrap-reverse;
+  flex-wrap: nowrap;
 }
 
 .js-center {
@@ -390,6 +420,10 @@ body {
 .bg-darkbluegreen {
   background-color: var(--clr-darkbluegreen);
 }
+.bg-card {
+  background-color: var(--color-card);
+}
+
 /*---font-size*/
 .fs-900 {
   font-size: var(--fs-900);
@@ -485,9 +519,27 @@ body {
   border: blue solid 2px;
 }
 
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-fix {
+  position: fixed;
+}
+
+.z-index-2 {
+  z-index: 2;
+}
+
+/*---Special Class---*/
+
 .profile-card {
   border-radius: 1rem;
-  box-shadow: 5px 5px var(--clr-lightgray);
+  box-shadow: 5px 5px var(--color-card-shadow);
 }
 
 .profileimg {
@@ -569,10 +621,6 @@ picture > img:last-of-type {
 
 footer a:nth-of-type(1) {
   color: #1769ff;
-}
-
-footer a:nth-of-type(2) {
-  color: #0a0a14;
 }
 
 footer a:nth-of-type(3) {
@@ -659,18 +707,84 @@ footer a:nth-of-type(4) {
   left: 32%;
 }
 
-.position-relative {
-  position: relative;
+@media (min-width: 300px) {
+  .flex-container {
+    flex-basis: 96%;
+  }
+  html,
+  body {
+    font-size: 9px;
+  }
+  .wrap {
+    flex-wrap: wrap;
+  }
+  .wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+  .flex-profile {
+    flex-basis: 70%;
+  }
+}
+@media (min-width: 500px) {
+  .flex-container {
+    flex-basis: 92%;
+  }
+  html,
+  body {
+    font-size: 10px;
+  }
+  .flex-profile {
+    flex-basis: 40%;
+  }
+}
+@media (min-width: 800px) {
+  .flex-container {
+    flex-basis: 95%;
+  }
+  html,
+  body {
+    font-size: 11px;
+  }
+}
+@media (min-width: 1000px) {
+  .flex-container {
+    flex-basis: 88%;
+  }
+  html,
+  body {
+    font-size: 12px;
+  }
+}
+@media (min-width: 1200px) {
+  .flex-container {
+    flex-basis: 81%;
+  }
+  html,
+  body {
+    font-size: 13px;
+  }
+}
+@media (min-width: 1400px) {
+  .flex-container {
+    flex-basis: 74%;
+  }
+  html,
+  body {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1600px) {
+  .flex-container {
+    flex-basis: 67%;
+  }
+  html,
+  body {
+    font-size: 15px;
+  }
 }
 
-.position-absolute {
-  position: absolute;
-}
-
-.position-fix {
-  position: fixed;
-}
-
-.z-index-2 {
-  z-index: 2;
+@media (min-width: 1800px) {
+  .flex-container {
+    flex-basis: 60%;
+  }
 }
