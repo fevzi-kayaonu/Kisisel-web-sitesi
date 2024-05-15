@@ -1,11 +1,12 @@
+import { footerData } from "../data";
 const Footer = () => {
   return (
     <>
       <footer className="padding-bottom-3  padding-top-3">
         <div className="flex js-center alg-center gap-4 padding-top-3 padding-bottom-3 position-relative  ">
           <div className="flex column  alg-end fs-800 fw-500 lh-4 padding-bottom-3 ">
-            <p className="z-index-2">Let’s work together on</p>
-            <p>your next product.</p>
+            <p className="z-index-2">{footerData.en[0]}</p>
+            <p>{footerData.en[1]}</p>
             <div className="bigstick-blue position-absolute"></div>
           </div>
 
@@ -14,7 +15,7 @@ const Footer = () => {
               Github
             </a>
             <a href="/" className="">
-              Personal Blog
+              {footerData.en[2]}
             </a>
             <a href="/" className="">
               {" "}

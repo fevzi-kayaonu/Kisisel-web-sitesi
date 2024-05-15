@@ -1,7 +1,17 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { useState } from "react";
+import { headerData } from "../data";
 
 const Header = () => {
+  const [darkMode, setDarkMode] = useState(false);
+  const [lang, setLang] = useState("tr");
+
+  const toogle = (e) => {
+    const name = e.target.name;
+    if (name === "mode") setDarkMode(!darkMode);
+    else if (name === "language") setLang(lang === "tr" ? "en" : "tr");
+  };
   return (
     <>
       <header className="bg-gray flex js-center padding-top-3 padding-bottom-3 position-relative">
@@ -11,12 +21,18 @@ const Header = () => {
 
         <div className="flex column alg-center gap-3 flex-basis-80 padding-bottom-3 ">
           <div className="flex mode alg-center gap-1 padding-top-3 padding-bottom-3 uppercase ">
-            <div className="radio-btn">
-              <div className="radio-inner active"></div>
-            </div>
-            <div className="fw-700 lh-1 tx-gray">
-              Dark mode | <span className="tx-red fw-700 lh-1">Türkçe</span>`ye
-              geç{" "}
+            <button className="radio-btn" name="mode" onClick={toogle}>
+              <div className={`radio-inner ${darkMode ? "active" : ""}`}></div>
+            </button>
+            <div className="fw-700 lh-1 tx-gray uppercase">
+              {headerData[lang].selections.mode[darkMode ? 1 : 0]} |{" "}
+              <button
+                className="tx-red fw-700 lh-1 uppercase"
+                name="language"
+                onClick={toogle}
+              >
+                {headerData[lang].selections.language}
+              </button>
             </div>
           </div>
 
@@ -25,11 +41,10 @@ const Header = () => {
               style={{ flexBasis: "65%" }}
               className=" flex column gap-3 position-relative "
             >
-              <p className="fs-700 fw-400">Hi! 👋</p>
+              <p className="fs-700 fw-400"> {headerData[lang].title}👋</p>
               <div className="stick-pink position-absolute"></div>
               <h1 className="fs-800 fw-500 lh-4 z-index-2">
-                I’m Almila. I’m a full-stack developer. I can craft solid and
-                scalable frontend products. Let’s meet!
+                {headerData[lang].content}
               </h1>
               <div className="flex gap-2 padding-top-1">
                 <FontAwesomeIcon className="fa-3x" icon={faLinkedin} />
@@ -38,12 +53,14 @@ const Header = () => {
               </div>
               <div className="fs-500 fw-400 lh-2">
                 <p>
-                  Currently <span className="tx-red">Freelancing</span>{" "}
-                  <span className="tx-red">for UX, UI, & Web Design</span>{" "}
-                  Project .
+                  {headerData[lang].text[0]}{" "}
+                  <span className="tx-red">{headerData[lang].text[1]}</span>{" "}
+                  {headerData[lang].text[2]}{" "}
+                  <span className="tx-red"> {headerData[lang].text[3]}</span>{" "}
+                  {headerData[lang].text[4]}
                 </p>
                 <p>
-                  Invite me to join your team -{" "}
+                  {headerData[lang].text[5]} -{" "}
                   <a href="pratamaiosi@gmail.com" className="tx-red">
                     pratamaiosi@gmail.com
                   </a>
