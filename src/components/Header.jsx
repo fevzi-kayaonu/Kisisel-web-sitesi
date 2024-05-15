@@ -4,7 +4,11 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 const Header = () => {
   return (
     <>
-      <header className="bg-gray flex js-center padding-top-3 padding-bottom-3">
+      <header className="bg-gray flex js-center padding-top-3 padding-bottom-3 position-relative">
+        <div className="polo-gray position-absolute"></div>
+        <div className="circle position-absolute"></div>
+        <div className="diglet-pink position-absolute"></div>
+
         <div className="flex column alg-center gap-3 flex-basis-80 padding-bottom-3 ">
           <div className="flex mode alg-center gap-1 padding-top-3 padding-bottom-3 uppercase ">
             <div className="radio-btn">
@@ -17,9 +21,13 @@ const Header = () => {
           </div>
 
           <div className="flex  space-between alg-center gap-3 ">
-            <div style={{ flexBasis: "65%" }} className=" flex column gap-3  ">
+            <div
+              style={{ flexBasis: "65%" }}
+              className=" flex column gap-3 position-relative "
+            >
               <p className="fs-700 fw-400">Hi! 👋</p>
-              <h1 className="fs-800 fw-500 lh-4">
+              <div className="stick-pink position-absolute"></div>
+              <h1 className="fs-800 fw-500 lh-4 z-index-2">
                 I’m Almila. I’m a full-stack developer. I can craft solid and
                 scalable frontend products. Let’s meet!
               </h1>
