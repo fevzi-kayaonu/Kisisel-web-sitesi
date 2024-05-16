@@ -5,7 +5,7 @@ const ContextProvider = ({ children }) => {
   const [lang, setLang] = useLocalStorage("language", "tr");
 
   const toogle = () => {
-    setLang(lang == "tr" ? "en" : "tr");
+    setLang(lang === "tr" ? "en" : "tr");
   };
 
   return (

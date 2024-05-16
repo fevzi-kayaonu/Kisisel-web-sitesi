@@ -2,9 +2,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { headerData } from "../data";
 import useLocalStorage from "../hooks/useLocalStorage";
+import { useContext } from "react";
+import { Context } from "../context/context";
 
 const Header = () => {
   const [darkMode, setDarkMode] = useLocalStorage("Theme", false);
+  const { lang, toogle } = useContext(Context);
 
   const toogleTheme = () => {
     setDarkMode(!darkMode);
@@ -12,6 +15,7 @@ const Header = () => {
   return (
     <>
       <header
+        id="top"
         className="bg-gray flex js-center padding-top-3 padding-bottom-3 position-relative"
         value={`${darkMode ? "dark" : ""}`}
       >

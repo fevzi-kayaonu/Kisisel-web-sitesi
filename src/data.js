@@ -93,7 +93,7 @@ export const profileData = {
       preferred: { name: "Tercih Ettiği Rol", value: "Frontend,UI" },
     },
     about: {
-      title: "About me",
+      title: "Hakkımda",
       content: [
         "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniamaut, odit laborum aliquam voluptatum nisi mollitia.",
         " Mnima accusamus ratione soluta aperiam sit voluptate? Dicta quoddeserunt quam temporibus cumque magnam!",
@@ -126,50 +126,56 @@ export const profileData = {
 };
 */
 export const projectsData = {
-  en: [
-    {
-      title: "Random Jokes",
-      content:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam aut, odit laborum aliquam voluptatum nisi mollitia.",
-      skills: ["react", "vercel", "axios", "router"],
-      images: [
-        { src: laptop, alt: "laptop" },
-        { src: left, alt: "left" },
-      ],
-    },
-    {
-      title: "Are you bored?",
-      content:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam aut, odit laborum aliquam voluptatum nisi mollitia minima accusamus ratione soluta aperiam sit voluptate? Dicta quod deserunt quam temporibus cumque magnam!",
-      skills: ["react", "redux", "axios", "router", "vercel"],
-      images: [
-        { src: laptop, alt: "laptop" },
-        { src: right, alt: "right" },
-      ],
-    },
-  ],
-  tr: [
-    {
-      title: "Rastgele Şakalar",
-      content:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam aut, odit laborum aliquam voluptatum nisi mollitia.",
-      skills: ["react", "vercel", "axios", "router"],
-      images: [
-        { src: laptop, alt: "laptop" },
-        { src: left, alt: "left" },
-      ],
-    },
-    {
-      title: "Sıkıldın mı?",
-      content:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam aut, odit laborum aliquam voluptatum nisi mollitia minima accusamus ratione soluta aperiam sit voluptate? Dicta quod deserunt quam temporibus cumque magnam!",
-      skills: ["react", "redux", "axios", "router", "vercel"],
-      images: [
-        { src: laptop, alt: "laptop" },
-        { src: right, alt: "right" },
-      ],
-    },
-  ],
+  en: {
+    title: "Projects",
+    projects: [
+      {
+        title: "Random Jokes",
+        content:
+          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam aut, odit laborum aliquam voluptatum nisi mollitia.",
+        skills: ["react", "vercel", "axios", "router"],
+        images: [
+          { src: laptop, alt: "laptop" },
+          { src: left, alt: "left" },
+        ],
+      },
+      {
+        title: "Are you bored?",
+        content:
+          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam aut, odit laborum aliquam voluptatum nisi mollitia minima accusamus ratione soluta aperiam sit voluptate? Dicta quod deserunt quam temporibus cumque magnam!",
+        skills: ["react", "redux", "axios", "router", "vercel"],
+        images: [
+          { src: laptop, alt: "laptop" },
+          { src: right, alt: "right" },
+        ],
+      },
+    ],
+  },
+  tr: {
+    title: "Projeler",
+    projects: [
+      {
+        title: "Rastgele Şakalar",
+        content:
+          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam aut, odit laborum aliquam voluptatum nisi mollitia.",
+        skills: ["react", "vercel", "axios", "router"],
+        images: [
+          { src: laptop, alt: "laptop" },
+          { src: left, alt: "left" },
+        ],
+      },
+      {
+        title: "Sıkıldın mı?",
+        content:
+          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam aut, odit laborum aliquam voluptatum nisi mollitia minima accusamus ratione soluta aperiam sit voluptate? Dicta quod deserunt quam temporibus cumque magnam!",
+        skills: ["react", "redux", "axios", "router", "vercel"],
+        images: [
+          { src: laptop, alt: "laptop" },
+          { src: right, alt: "right" },
+        ],
+      },
+    ],
+  },
 };
 
 export const headerData = {
