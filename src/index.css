@@ -175,6 +175,10 @@ button {
   text-decoration: none;
 }
 
+#root {
+  overflow: hidden;
+}
+
 :root {
   /*-------fontsize-----*/
   --fs-900: 3rem;
@@ -569,6 +573,7 @@ body {
   background-color: #ffc207;
   border-radius: 50%;
   transition: all 0.6s;
+  cursor: pointer;
 }
 
 .radio-inner::before {
@@ -589,8 +594,9 @@ body {
 }
 
 .active::before {
-  left: -9px;
-  transform: scale(1.1);
+  left: -4px;
+  transform: scale(0.8);
+  cursor: pointer;
 }
 
 li {

@@ -9,9 +9,14 @@ const Header = () => {
   const [darkMode, setDarkMode] = useLocalStorage("Theme", false);
   const { lang, toogle } = useContext(Context);
 
-  const toogleTheme = () => {
+  const toggleTheme = () => {
     setDarkMode(!darkMode);
   };
+  const toggleWithDiv = (e) => {
+    toggleTheme(); // Button işlevini çağır
+    e.stopPropagation(); // Div'in ana elementlere tıklama olayını iletmemesini sağla
+  };
+
   return (
     <>
       <header
@@ -28,9 +33,13 @@ const Header = () => {
               id="mode"
               className="radio-btn"
               name="mode"
-              onClick={toogleTheme}
+              onClick={toggleTheme}
             >
-              <div className={`radio-inner ${darkMode ? "active" : ""}`}></div>
+              <div
+                htmlFor="mode"
+                className={`radio-inner ${darkMode ? "active" : ""}`}
+                onClick={toggleWithDiv}
+              ></div>
             </button>
             <label htmlFor="mode" className="fw-700 lh-1 tx-gray uppercase">
               {headerData[lang].selections.mode[darkMode ? 1 : 0]}{" "}
