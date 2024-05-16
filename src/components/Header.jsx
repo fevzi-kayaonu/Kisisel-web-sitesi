@@ -59,9 +59,8 @@ const Header = () => {
               style={{ flexBasis: "65%" }}
               className=" flex column gap-3 position-relative "
             >
-              <p className="fs-700 fw-400"> {headerData[lang].title}👋</p>
-              <div className="stick-pink position-absolute"></div>
-              <h1 className="fs-800 fw-500 lh-4 z-index-2">
+              <div className="fs-700 fw-400"> {headerData[lang].title}👋</div>
+              <h1 className=" text-pink fs-800 fw-500 lh-4 z-index-2">
                 {headerData[lang].content}
               </h1>
               <div className="flex gap-2 padding-top-1">

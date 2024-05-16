@@ -25,8 +25,7 @@ const Profile = () => {
             )}
           </article>
           <article className=" flex column gap-2 flex-profile position-relative">
-            <div className="stick-blue position-absolute"></div>
-            <h3 className="fs-600 fw-400 lh-2 ff-play z-index-2">
+            <h3 className="text-blue fs-600 fw-400 lh-2 ff-play z-index-2">
               {profileData[lang].about.title}
             </h3>
             <p className="fs-500 fw-400 lh-2">

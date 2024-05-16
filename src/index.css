@@ -713,6 +713,56 @@ footer a:nth-of-type(4) {
   left: 32%;
 }
 
+.text-pink {
+  position: relative; /* Konumlandırma için gerekli */
+  z-index: 1;
+}
+
+.text-pink::after {
+  content: ""; /* İçerik eklemek için gerekli */
+  position: absolute; /* Konumlandırma için gerekli */
+  top: 2rem; /* Metnin altına 2 piksellik boşluk bırakır */
+  left: -1rem; /* Sol kenardan başlar */
+  width: 9.1rem; /* Metnin tam genişliğinde olacak */
+  height: 2rem; /* Çizginin kalınlığı */
+  background-color: #ea2678; /* Çizginin rengi */
+  border-radius: 5px; /* Çizginin köşelerinin yumuşatılması */
+  z-index: -1;
+}
+.text-blue {
+  position: relative; /* Konumlandırma için gerekli */
+  z-index: 1;
+}
+
+.text-blue::after {
+  content: ""; /* İçerik eklemek için gerekli */
+  position: absolute; /* Konumlandırma için gerekli */
+  top: 1rem; /* Metnin altına 2 piksellik boşluk bırakır */
+  left: -0.7rem; /* Sol kenardan başlar */
+  width: 5.5rem; /* Metnin tam genişliğinde olacak */
+  height: 1.3rem; /* Çizginin kalınlığı */
+  background-color: #82bbff; /* Çizginin rengi */
+  border-radius: 5px; /* Çizginin köşelerinin yumuşatılması */
+  z-index: -1;
+}
+
+.text-blue-big {
+  position: relative; /* Konumlandırma için gerekli */
+  z-index: 1;
+}
+
+.text-blue-big::after {
+  content: ""; /* İçerik eklemek için gerekli */
+  position: absolute; /* Konumlandırma için gerekli */
+  bottom: 0.2rem; /* Metnin altına 2 piksellik boşluk bırakır */
+  left: 7.8rem; /* Sol kenardan başlar */
+  width: 17rem; /* Metnin tam genişliğinde olacak */
+  height: 1.3rem; /* Çizginin kalınlığı */
+  background-color: #82bbff; /* Çizginin rengi */
+  border-radius: 5px; /* Çizginin köşelerinin yumuşatılması */
+  z-index: -1;
+}
+
 @media (max-width: 600px) {
   .wrap-reverse {
     flex-wrap: wrap-reverse;
