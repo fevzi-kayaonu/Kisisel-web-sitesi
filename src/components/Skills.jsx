@@ -12,7 +12,7 @@ const Skills = () => {
         <h2 className="flex-basis-40 fw-500 lh-4 fs-900">
           {skillsData[lang].title}
         </h2>
-        <div className="flex js-center gap-2 padding-bottom-3 wrap">
+        <div className="flex js-between gap-2 padding-bottom-3 wrap">
           {skillsData.skills.map((item) => (
             <figure
               key={item.name}

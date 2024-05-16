@@ -5,8 +5,8 @@ import { projectsData } from "../data";
 const Projects = () => {
   const { lang } = useContext(Context);
   return (
-    <section className="flex js-center bg-white  padding-top-3 padding-bottom-3">
-      <div className="flex column flex-container alg-center  padding-bottom-3 gap-2">
+    <section className="flex js-center bg-white  padding-top-3">
+      <div className="flex column flex-container alg-center  gap-2">
         <h2 className="fs-800 fw-500 lh-3">{projectsData[lang].title}</h2>
         <div className="flex js-center gap-4 wrap ">
           {projectsData[lang].projects.map((item, index) => (
