@@ -1,33 +1,30 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { useState } from "react";
 import { headerData } from "../data";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 const Header = () => {
-  const [darkMode, setDarkMode] = useState(false);
-  const [lang, setLang] = useState("tr");
+  const [darkMode, setDarkMode] = useLocalStorage("Theme", false);
 
-  const toogle = (e) => {
-    const name = e.target.name;
-    if (name === "mode") setDarkMode(!darkMode);
-    else if (name === "language") setLang(lang === "tr" ? "en" : "tr");
+  const toogleTheme = () => {
+    setDarkMode(!darkMode);
   };
   return (
     <>
       <header
-        className="bg-gray flex js-center padding-top-3 padding-bottom-3 position-relative outline"
+        className="bg-gray flex js-center padding-top-3 padding-bottom-3 position-relative"
         value={`${darkMode ? "dark" : ""}`}
       >
         <div className="polo-gray position-absolute"></div>
         <div className="circle position-absolute"></div>
         <div className="diglet-pink position-absolute"></div>
-        <div className="flex column alg-center gap-3 flex-container padding-bottom-3 outline ">
-          <div className="flex mode alg-center js-center  gap-1 padding-top-3 padding-bottom-3 uppercase padding-right-1">
+        <div className="flex column alg-center gap-3 flex-container padding-bottom-3 ">
+          <div className="flex mode alg-center js-center  gap-1 padding-top-3 padding-bottom-3 uppercase padding-right-2">
             <button
               id="mode"
               className="radio-btn"
               name="mode"
-              onClick={toogle}
+              onClick={toogleTheme}
             >
               <div className={`radio-inner ${darkMode ? "active" : ""}`}></div>
             </button>
@@ -44,7 +41,7 @@ const Header = () => {
             </button>
           </div>
 
-          <div className="flex  space-between alg-center js-center gap-3 wrap-reverse">
+          <div className="flex  space-between alg-center js-center gap-3 wrap-reverse padding-right-2 padding-left-2">
             <div
               style={{ flexBasis: "65%" }}
               className=" flex column gap-3 position-relative "

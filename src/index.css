@@ -265,8 +265,8 @@ body {
   flex-basis: 80%;
 }
 
-.flex-basis-30 {
-  flex-basis: 30%;
+.flex-basis-40 {
+  flex-basis: 40%;
 }
 .flex-profile {
   flex-basis: 40%;
@@ -604,10 +604,10 @@ picture {
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: 5.7rem;
+  bottom: 11.7rem;
 }
 
-picture img {
+picture img:nth-of-type(2) {
   position: absolute;
 }
 
@@ -707,13 +707,73 @@ footer a:nth-of-type(4) {
   left: 32%;
 }
 
-@media (min-width: 300px) {
+@media (max-width: 1800px) {
+  .flex-container {
+    flex-basis: 75%;
+  }
+  html,
+  body {
+    font-size: 18px;
+  }
+}
+@media (max-width: 1600px) {
+  .flex-container {
+    flex-basis: 75%;
+  }
+  html,
+  body {
+    font-size: 17px;
+  }
+}
+@media (max-width: 1400px) {
+  .flex-container {
+    flex-basis: 81%;
+  }
+  html,
+  body {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .flex-container {
+    flex-basis: 88%;
+  }
+  html,
+  body {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .flex-container {
+    flex-basis: 95%;
+  }
+  html,
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 800px) {
+  .flex-container {
+    flex-basis: 92%;
+  }
+  html,
+  body {
+    font-size: 12px;
+  }
+  .flex-profile {
+    flex-basis: 70%;
+  }
+}
+@media (max-width: 500px) {
   .flex-container {
     flex-basis: 96%;
   }
   html,
   body {
-    font-size: 9px;
+    font-size: 10px;
   }
   .wrap {
     flex-wrap: wrap;
@@ -721,70 +781,11 @@ footer a:nth-of-type(4) {
   .wrap-reverse {
     flex-wrap: wrap-reverse;
   }
-  .flex-profile {
-    flex-basis: 70%;
-  }
-}
-@media (min-width: 500px) {
-  .flex-container {
-    flex-basis: 92%;
-  }
-  html,
-  body {
-    font-size: 10px;
-  }
-  .flex-profile {
-    flex-basis: 40%;
-  }
-}
-@media (min-width: 800px) {
-  .flex-container {
-    flex-basis: 95%;
-  }
-  html,
-  body {
-    font-size: 11px;
-  }
-}
-@media (min-width: 1000px) {
-  .flex-container {
-    flex-basis: 88%;
-  }
-  html,
-  body {
-    font-size: 12px;
-  }
-}
-@media (min-width: 1200px) {
-  .flex-container {
-    flex-basis: 81%;
-  }
-  html,
-  body {
-    font-size: 13px;
-  }
-}
-@media (min-width: 1400px) {
-  .flex-container {
-    flex-basis: 74%;
-  }
-  html,
-  body {
-    font-size: 14px;
-  }
-}
-@media (min-width: 1600px) {
-  .flex-container {
-    flex-basis: 67%;
-  }
-  html,
-  body {
-    font-size: 15px;
-  }
 }
 
 @media (min-width: 1800px) {
-  .flex-container {
-    flex-basis: 60%;
+  html,
+  body {
+    font-size: 20px;
   }
 }
