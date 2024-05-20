@@ -6,14 +6,15 @@ const Footer = () => {
   const { data } = useContext(Context);
 
   const direction = (e) => {
+    //window.scrollTo({ top: 0, behavior: "smooth" });
+    document.documentElement.scrollTop = 0;
     e.prevent.default();
-    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
     <>
-      <footer className=" flex js-center bg-white padding-bottom-3 ">
-        <div className="flex js-center alg-center gap-4  padding-bottom-3 position-relative flex-container ">
+      <footer className=" flex js-center bg-white padding-bottom-3 padding-top-3 ">
+        <div className="flex js-center alg-center gap-4  padding-bottom-3 position-relative flex-container padding-top-3  ">
           <div className="flex column  alg-end fs-800 fw-500 lh-4 padding-bottom-3 ">
             <p className="text-blue-big z-index-2">{data[0]?.footerData[0]}</p>
             <p>{data[0]?.footerData[1]}</p>

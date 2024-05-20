@@ -7,7 +7,6 @@ export const METHODS = {
   PUT: "put",
   DELETE: "delete",
 };
-
 export default function useAxios(initialData) {
   const baseURL = "https://664b41c9a300e8795d44d9d9.mockapi.io/";
 

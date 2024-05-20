@@ -11,11 +11,12 @@ const Skills = () => {
         <h2 className="flex-basis-40 fw-500 lh-4 fs-900">
           {data[0]?.skillsData.title}
         </h2>
-        <div className="flex js-between gap-2 padding-bottom-3 wrap">
+        <div className="flex js-center gap-1 padding-bottom-3 wrap">
           {data[0]?.skillsData.skills.map((item) => (
             <figure
               key={item.name}
-              className="flex column alg-center gap-1 fs-600 uppercase "
+              className="flex column alg-center gap-1 fs-600 uppercase flex-basis-30"
+              style={{ minWidth: "50px" }}
             >
               {" "}
               <div>

@@ -3,10 +3,10 @@ import useLocalStorage from "../hooks/useLocalStorage";
 import useAxios from "../hooks/useAxios";
 
 const ContextProvider = ({ children }) => {
-  const { data, sendRequest, setData, error, loading, METHODS } = useAxios({});
+  const { data, sendRequest, loading, METHODS } = useAxios({});
 
   return (
-    <Context.Provider value={{ data, sendRequest, METHODS }}>
+    <Context.Provider value={{ data, sendRequest, METHODS, loading }}>
       {children}
     </Context.Provider>
   );

@@ -3,6 +3,7 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import useLocalStorage from "../hooks/useLocalStorage";
 import { useContext, useEffect } from "react";
 import { Context } from "../context/context";
+import { Slide, toast } from "react-toastify";
 
 const Header = () => {
   const [darkMode, setDarkMode] = useLocalStorage("Theme", false);
@@ -11,11 +12,51 @@ const Header = () => {
 
   useEffect(() => {
     sendRequest({ url: `${lang}`, method: METHODS.GET });
-    console.log(data);
   }, []);
 
   useEffect(() => {
-    sendRequest({ url: `${lang}`, method: METHODS.GET });
+    sendRequest({
+      url: `${lang}`,
+      method: METHODS.GET,
+      callbackSuccess: () =>
+        toast.success(
+          `${
+            lang === "TR"
+              ? "Türkçe dil desteğine geçildi."
+              : "Switched to English language support."
+          }`,
+          {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: `${darkMode ? "dark" : "light"}`,
+            transition: Slide,
+          }
+        ),
+      callbackError: () =>
+        toast.error(
+          `${
+            lang === "TR"
+              ? "Türkçe dil desteğine geçilemedi."
+              : "Failed to Switched to English language support."
+          }`,
+          {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: `${darkMode ? "dark" : "light"}`,
+            transition: Slide,
+          }
+        ),
+    });
     console.log(data);
   }, [lang]);
 
