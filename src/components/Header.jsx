@@ -1,13 +1,27 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { headerData } from "../data";
 import useLocalStorage from "../hooks/useLocalStorage";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Context } from "../context/context";
 
 const Header = () => {
   const [darkMode, setDarkMode] = useLocalStorage("Theme", false);
-  const { lang, toogle } = useContext(Context);
+  const [lang, setLang] = useLocalStorage("language", "TR");
+  const { data, sendRequest, METHODS } = useContext(Context);
+
+  useEffect(() => {
+    sendRequest({ url: `${lang}`, method: METHODS.GET });
+    console.log(data);
+  }, []);
+
+  useEffect(() => {
+    sendRequest({ url: `${lang}`, method: METHODS.GET });
+    console.log(data);
+  }, [lang]);
+
+  const toogle = () => {
+    setLang(lang === "TR" ? "EN" : "TR");
+  };
 
   const toggleTheme = () => {
     setDarkMode(!darkMode);
@@ -43,7 +57,7 @@ const Header = () => {
               ></div>
             </button>
             <label htmlFor="mode" className="fw-700 lh-1 tx-gray uppercase">
-              {headerData[lang].selections.mode[darkMode ? 1 : 0]}{" "}
+              {data[0]?.headerData?.selections?.mode[darkMode ? 1 : 0]}{" "}
             </label>
             <span>|</span>
             <button
@@ -52,7 +66,7 @@ const Header = () => {
               name="language"
               onClick={toogle}
             >
-              {headerData[lang].selections.language}
+              {data[0]?.headerData?.selections?.language}
             </button>
           </div>
 
@@ -61,9 +75,11 @@ const Header = () => {
               style={{ flexBasis: "65%" }}
               className="flex column gap-3 position-relative"
             >
-              <div className="fs-700 fw-400">{headerData[lang].title}👋</div>
+              <div className="fs-700 fw-400">
+                {data[0]?.headerData?.title}👋
+              </div>
               <h1 className="text-pink fs-800 fw-500 lh-4 z-index-2">
-                {headerData[lang].content}
+                {data[0]?.headerData?.content}
               </h1>
               <div className="flex gap-2 padding-top-1">
                 <FontAwesomeIcon className="fa-3x" icon={faLinkedin} />
@@ -72,15 +88,15 @@ const Header = () => {
               </div>
               <div className="fs-500 fw-400 lh-2">
                 <p>
-                  {headerData[lang].text[0]}{" "}
-                  <span className="tx-red">{headerData[lang].text[1]}</span>{" "}
-                  {headerData[lang].text[2]}{" "}
-                  <span className="tx-red">{headerData[lang].text[3]}</span>{" "}
-                  {headerData[lang].text[4]}
+                  {data[0]?.headerData?.text[0]}{" "}
+                  <span className="tx-red">{data[0]?.headerData?.text[1]}</span>{" "}
+                  {data[0]?.headerData?.text[2]}{" "}
+                  <span className="tx-red">{data[0]?.headerData?.text[3]}</span>{" "}
+                  {data[0]?.headerData?.text[4]}
                 </p>
                 <p>
-                  {headerData[lang].text[5]} -{" "}
-                  <a href="pratamaiosi@gmail.com" className="tx-red">
+                  {data[0]?.headerData?.text[5]} -{" "}
+                  <a href="mailto:pratamaiosi@gmail.com" className="tx-red">
                     pratamaiosi@gmail.com
                   </a>
                 </p>

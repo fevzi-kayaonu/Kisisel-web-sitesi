@@ -1,15 +1,14 @@
 import { createContext } from "react";
 import useLocalStorage from "../hooks/useLocalStorage";
+import useAxios from "../hooks/useAxios";
 
 const ContextProvider = ({ children }) => {
-  const [lang, setLang] = useLocalStorage("language", "tr");
-
-  const toogle = () => {
-    setLang(lang === "tr" ? "en" : "tr");
-  };
+  const { data, sendRequest, setData, error, loading, METHODS } = useAxios({});
 
   return (
-    <Context.Provider value={{ lang, toogle }}>{children}</Context.Provider>
+    <Context.Provider value={{ data, sendRequest, METHODS }}>
+      {children}
+    </Context.Provider>
   );
 };
 

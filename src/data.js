@@ -8,6 +8,7 @@ import vs from "./assets/Skills/vsLogo.png";
 import laptop from "./assets/Projects/laptop.png";
 import right from "./assets/Projects/right.png";
 import left from "./assets/Projects/left.png";
+import axios from "axios";
 
 export const skillsData = {
   en: {
@@ -102,29 +103,6 @@ export const profileData = {
     titles: ["Profil", "Temel Bilgiler"],
   },
 };
-/*
-export const profileData = {
-  birthday: {
-    en: { name: "Birth Date", value: "24.03.1996" },
-    tr: { name: "Doğum Tarihi", value: "24.03.1996" },
-  },
-  city: {
-    en: { name: "City", value: "Ankara" },
-    tr: { name: "İkamet Şehri", value: "Ankara" },
-  },
-  education: {
-    en: { name: "Education", value: "Hacettepe Ünv. Biyoloji Lisans, 2016" },
-    tr: {
-      name: "Eğitim Durumu",
-      value: "Hacettepe Ünv. Biyoloji Lisans, 2016",
-    },
-  },
-  preferred: {
-    en: { name: "Preferred Role", value: "Frontend,UI" },
-    tr: { name: "Tercih Ettiği Rol", value: "Frontend,UI" },
-  },
-};
-*/
 export const projectsData = {
   en: {
     title: "Projects",
@@ -150,6 +128,7 @@ export const projectsData = {
         ],
       },
     ],
+    links: ["View on Github", "Go to app"],
   },
   tr: {
     title: "Projeler",
@@ -175,6 +154,7 @@ export const projectsData = {
         ],
       },
     ],
+    links: ["Github'ta görüntüle", "Uygulamaya git"],
   },
 };
 
@@ -217,3 +197,32 @@ export const footerData = {
   en: ["Let’s work together on", "your next product.", "Personal Blog"],
   tr: ["Bir sonraki projende", "birlikte çalışalım.", "Kişisel Blog"],
 };
+/*
+const url = "https://664b41c9a300e8795d44d9d9.mockapi.io/TR";
+
+axios
+  .post(url, {
+    id: "1",
+    headerData: { ...headerData.tr },
+    projectsData: { ...projectsData.tr },
+    profileData: { ...profileData.tr },
+    skillsData: { ...skillsData.tr, skills: [...skillsData.skills] },
+    footerData: [...footerData.tr],
+  })
+  .then((res) => console.log(res.data))
+  .catch((err) => console.error());
+
+const url2 = "https://664b41c9a300e8795d44d9d9.mockapi.io/EN";
+
+axios
+  .post(url2, {
+    id: "1",
+    headerData: { ...headerData.en },
+    projectsData: { ...projectsData.en },
+    profileData: { ...profileData.en },
+    skillsData: { ...skillsData.en, skills: [...skillsData.skills] },
+    footerData: [...footerData.en],
+  })
+  .then((res) => console.log(res.data))
+  .catch((err) => console.error());
+*/
