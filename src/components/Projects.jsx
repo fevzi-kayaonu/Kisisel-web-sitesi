@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { Context } from "../context/context";
-import { projectsData } from "../data";
 
 const Projects = () => {
   const { data } = useContext(Context);
@@ -8,7 +7,9 @@ const Projects = () => {
   return (
     <section className="flex js-center bg-white  padding-top-3">
       <div className="flex column flex-container alg-center  gap-2">
-        <h2 className="fs-800 fw-500 lh-3">{data[0]?.projectsData.title}</h2>
+        <h2 className="fs-800 fw-500 lh-3 padding-bottom-0">
+          {data[0]?.projectsData.title}
+        </h2>
         <div className="flex js-center gap-4 wrap ">
           {data[0]?.projectsData.projects.map((item, index) => (
             <div
@@ -39,7 +40,9 @@ const Projects = () => {
                   <a href="https://github.com/Workintech" target="_blank">
                     {data[0]?.projectsData.links[0]}
                   </a>
-                  <a href="/">{data[0]?.projectsData.links[1] + "->"}</a>
+                  <a href="https://github.com/Workintech" target="_blank">
+                    {data[0]?.projectsData.links[1] + "->"}
+                  </a>
                 </div>
               </article>
               <div

@@ -3,7 +3,8 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import useLocalStorage from "../hooks/useLocalStorage";
 import { useContext, useEffect } from "react";
 import { Context } from "../context/context";
-import { Slide, toast } from "react-toastify";
+
+import { toastFunc } from "../hooks/toast";
 
 const Header = () => {
   const [darkMode, setDarkMode] = useLocalStorage("Theme", false);
@@ -18,58 +19,22 @@ const Header = () => {
     sendRequest({
       url: `${lang}`,
       method: METHODS.GET,
-      callbackSuccess: () =>
-        toast.success(
-          `${
-            lang === "TR"
-              ? "Türkçe dil desteğine geçildi."
-              : "Switched to English language support."
-          }`,
-          {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: `${darkMode ? "dark" : "light"}`,
-            transition: Slide,
-          }
-        ),
-      callbackError: () =>
-        toast.error(
-          `${
-            lang === "TR"
-              ? "Türkçe dil desteğine geçilemedi."
-              : "Failed to Switched to English language support."
-          }`,
-          {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: `${darkMode ? "dark" : "light"}`,
-            transition: Slide,
-          }
-        ),
+      callbackSuccess: () => toastFunc("success", lang, darkMode),
+      callbackError: () => toastFunc("error", lang, darkMode),
     });
     console.log(data);
   }, [lang]);
 
-  const toogle = () => {
-    setLang(lang === "TR" ? "EN" : "TR");
-  };
-
-  const toggleTheme = () => {
-    setDarkMode(!darkMode);
-  };
-  const toggleWithDiv = (e) => {
-    toggleTheme(); // Button işlevini çağır
-    e.stopPropagation(); // Div'in ana elementlere tıklama olayını iletmemesini sağla
+  const toogle = (e) => {
+    const name = e.target.name;
+    if (name === "mode") {
+      setDarkMode(!darkMode);
+    } else if (name === "language") {
+      setLang(lang === "TR" ? "EN" : "TR");
+    } else {
+      setDarkMode(!darkMode);
+      e.stopPropagation();
+    }
   };
 
   return (
@@ -89,21 +54,24 @@ const Header = () => {
               id="mode"
               className="radio-btn"
               name="mode"
-              onClick={toggleTheme}
+              onClick={toogle}
             >
               <div
                 htmlFor="mode"
                 className={`radio-inner ${darkMode ? "active" : ""}`}
-                onClick={toggleWithDiv}
+                onClick={toogle}
               ></div>
             </button>
-            <label htmlFor="mode" className="fw-700 lh-1 tx-gray uppercase">
+            <label
+              htmlFor="mode"
+              className="fw-700 lh-1 tx-gray uppercase point"
+            >
               {data[0]?.headerData?.selections?.mode[darkMode ? 1 : 0]}{" "}
             </label>
             <span>|</span>
             <button
               data-cy="language-toggle"
-              className="tx-red bg-gray fw-700 lh-1 uppercase"
+              className="tx-red bg-gray fw-700 lh-1 uppercase point"
               name="language"
               onClick={toogle}
             >
@@ -113,7 +81,7 @@ const Header = () => {
 
           <div className="flex space-between alg-center js-center gap-3 wrap-reverse padding-right-2 padding-left-2">
             <div
-              style={{ flexBasis: "65%" }}
+              style={{ flexBasis: "95%" }}
               className="flex column gap-3 position-relative"
             >
               <div className="fs-700 fw-400">
@@ -136,8 +104,11 @@ const Header = () => {
                   {data[0]?.headerData?.text[4]}
                 </p>
                 <p>
-                  {data[0]?.headerData?.text[5]} -{" "}
-                  <a href="mailto:pratamaiosi@gmail.com" className="tx-red">
+                  {data[0]?.headerData?.text[5]} {"-> "}
+                  <a
+                    href="mailto:pratamaiosi@gmail.com"
+                    className="tx-red underline"
+                  >
                     pratamaiosi@gmail.com
                   </a>
                 </p>
